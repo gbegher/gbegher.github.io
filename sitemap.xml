@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/2016/02/19/craft-beer/</loc>
-<lastmod>2016-02-19T00:00:00-06:00</lastmod>
+<loc>gbegher.github.io/2018/01/12/welcome/</loc>
+<lastmod>2018-01-12T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>/archive/</loc>
+<loc>gbegher.github.io/archive/</loc>
 </url>
 <url>
-<loc>/</loc>
+<loc>gbegher.github.io/</loc>
 </url>
 <url>
-<loc>/category/juice/</loc>
+<loc>gbegher.github.io/impressum/</loc>
+</url>
+<url>
+<loc>gbegher.github.io/category/introduction/</loc>
+</url>
+<url>
+<loc>gbegher.github.io/category/overview/</loc>
 </url>
 </urlset>

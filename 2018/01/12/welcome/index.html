@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introduction | Schematic</title>
+  <meta name="author" content="Gerrit Begher">
+  <meta name="description" content="A research blog about category theory and programming">
+  <meta property="og:title" content="Introduction | Schematic">
+  <meta property="og:url" content="gbegher.github.io/2018/01/12/welcome/">
+  <meta property="og:site_name" content="Schematic">
+  <meta property="og:description" content="A research blog about category theory and programming">
+  <meta property="og:image" content="/assets/img/welcome.png">
+  <meta property="og:type" content="blog">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="A research blog about category theory and programming">
+  <meta name="twitter:title" content="Introduction | Schematic">
+  <meta name="twitter:url" content="gbegher.github.io/2018/01/12/welcome/">
+  <meta name="twitter:site" content="Schematic">
+  <meta name="twitter:creator" content="@g_begher">
+  <meta name="twitter:domain" content="gbegher.github.io">
+  <meta property="twitter:image" content="/assets/img/welcome.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <link rel="alternate" type="application/rss+xml" title="Schematic" href="gbegher.github.io/feed.xml">
+  <link rel="canonical" href="gbegher.github.io/2018/01/12/welcome/">
+
+  
+</head>
+
+
+  <body>
+
+    <main>
+      <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="section-padding--lg mast rellax" data-rellax-speed="-4">
+    <a class="nav nav--white" href="/">
+      <i class="fa fa-lg fa-arrow-left"></i>
+      <span>Back to Posts</span>
+    </a>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/img/welcome.png');"></figure>
+    <div class="mast__container">
+      <span><time datetime="2018-01-12T00:00:00-06:00" itemprop="datePublished">Jan 12, 2018</time></span>
+      <h1 itemprop="name headline">Introduction</h1>
+      
+        <span>Posted in 
+          
+            <a class="nav--white" href="/category/introduction">Introduction</a>, 
+          
+            <a class="nav--white" href="/category/overview">Overview</a>
+          
+        </span>
+      
+      <span></span>
+    </div>
+  </header>
+
+  <section class="section-padding bg-grey" itemprop="articleBody">
+    <div class="post">
+      <h1 id="hello-and-welcome">Hello and welcome.</h1>
+
+<p><br /></p>
+
+<p>I am Gerrit Begher, a mathematician and software engineer living in Berlin. The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.</p>
+
+<p><br /></p>
+
+<h2 id="arrowized-programming">Arrowized programming</h2>
+
+<p>Arrows provide an abstraction for computation. We start out this section with a series of posts providing a survey.</p>
+
+<ul>
+  <li>
+    <p>From monads to monad comprehension and back again</p>
+
+    <p><em>Survey</em>: We give an introduction to monads on a cartesian monoidal category. We then introduce monad comprehension as a way to write programs. Finally, we arrive at the slogan “A monad is something that lets us interpret monad comprehensions”.</p>
+  </li>
+  <li>
+    <p>Arrows as an abstraction for computation</p>
+
+    <p><em>Survey</em>: Some notions of computation can not be modeled using monads. The more general concept of arrows provides an abstraction to deal with these shortcomings.</p>
+  </li>
+  <li>
+    <p>Form arrows to arrow comprehension and back again</p>
+
+    <p><em>Survey</em>: Just as for monads there is also a notion of comprehension for arrows. It allows for a very convenient way to compose computations with arrows . We repeat our discussion of monads and investigate the slogan “An arrow is something that lets us interpret arrow comprehensions”.</p>
+  </li>
+  <li>
+    <p>Digression: Generators in Javascript and arrow comprehension</p>
+
+    <p><em>Survey</em>: We imagine a better world where Javascript has pure functions - and thus cloneable generators - and investigate how comprehension can be related to generator functions.</p>
+  </li>
+  <li>
+    <p>A Lavwere theory for arrow expressions</p>
+
+    <p><em>Survey</em>: We introduce a lavwere theory capturing the syntactic structure of arrow comprehension expressions.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="the-grothendieck-construction">The Grothendieck construction</h2>
+
+<p>The Grothendiek construction provides a way to capture the slogan “The whole is more than the sum of its parts”. It explains how individual parts can be glued together to form a larger object. Conversely, it also gives us a way to describe decompositions of objects. Our goal is to understand how the Grothendiek construction relates to arrow comprehension.</p>
+
+<ul>
+  <li>
+    <p>Grothendieck construction I a: Indexed direct sums of sets</p>
+
+    <p><em>Survey</em>: We give an introduction to indexed sums of sets and how they relate to partitions of a set.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction I b: Set comprehension</p>
+
+    <p><em>Survey</em>: We take a close look at one of the most common syntactic elements of mathematical texts: Set comprehension.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction II a: Presheaves and distributors</p>
+
+    <p><em>Survey</em>: We investigate on how to take into account additional structure on the indexing set - namely that of a category - and how to generalize this to families of sets indexed by two categories.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction III a: Indexed and fibered categories</p>
+
+    <p><em>Survey</em>: After adding structure to the base as described in <strong>Part II a</strong> we now add structure to objects we index. Specifically, we define indexed categories and fibered categories and establish an equivalence between the two concepts.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction II b: Enriched distributors</p>
+
+    <p><em>Research  notes</em>: We give an explicit description of a generalization of the Grothendieck construction for presheaves and distributors to the setting of enriched categories.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction III b: Decomposition of enriched categories</p>
+
+    <p><em>Research notes</em>: We describe a Grothendieck construction for enriched categories indexed by an enriched category and compare the construction to classical indexed categories.
+`</p>
+  </li>
+  <li>
+    <p>Grothendieck construction IV: Power graphs</p>
+
+    <p><em>Survey</em>: We investigate the relation between power graphs - a tool used to understand and visualize large graphs - and the Grothendieck construction.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction V: Directed (acyclic) graphs</p>
+
+    <p><em>Survey</em>: We generalize the relation between power graphs and the Grothendieck construction to directed graphs.</p>
+  </li>
+  <li>
+    <p>Grothendieck construction VI: Comprehension and nested DAGs</p>
+
+    <p><em>Research notes</em>: We describe how comprehension expressions can be compiled into DAGs.</p>
+  </li>
+</ul>
+
+
+    </div>
+  </section>
+
+  <section class="profile">
+    <div class="profile__card">
+      <div class="profile__img">
+        <figure class="absolute-bg" style="background-image: url('/assets/img/gerrit.png');"></figure>
+      </div>
+      <div class="profile__container">
+        <p>Gerrit Begher is a mathematician and software engineer living in Berlin. His research deals with the category theoretic semantics of programming languages. He enjoys board gaming, electronic music, category theory and long walks on the beach.</p>
+        
+          <ul class="profile__social">
+            
+              <li><a class="fa fa-lg fa-envelope-o" href="mailto:gbegher*protonmail.com"></a></li>
+            
+            
+              <li><a class="fa fa-lg fa-github" href="https://github.com/gbegher" target="_blank"></a></li>
+            
+              <li><a class="fa fa-lg fa-stack-overflow" href="https://mathoverflow.net/users/1261/gerrit-begher?tab=profile" target="_blank"></a></li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </section>
+
+</article>
+
+
+
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.0.0/rellax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+
+  </body>
+
+</html>
