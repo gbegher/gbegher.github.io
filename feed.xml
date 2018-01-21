@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Schematic</title>
+    <title>Schematic Programming</title>
     <description>A research blog about category theory and programming</description>
     <link>gbegher.github.io/</link>
     <atom:link href="gbegher.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Jan 2018 09:54:39 -0600</pubDate>
-    <lastBuildDate>Fri, 12 Jan 2018 09:54:39 -0600</lastBuildDate>
+    <pubDate>Sat, 20 Jan 2018 20:01:01 -0600</pubDate>
+    <lastBuildDate>Sat, 20 Jan 2018 20:01:01 -0600</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -15,7 +15,15 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;I am Gerrit Begher, a mathematician and software engineer living in Berlin. The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.&lt;/p&gt;
+&lt;p&gt;I am Gerrit Begher, a mathematician and software engineer living in Berlin.&lt;/p&gt;
+
+&lt;p&gt;The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.&lt;/p&gt;
+
+&lt;p&gt;Another project of mine is to build a functional reactive programming environment. This blog will also serve as a hub to explain the ideas behind this project. For now - Just a short sketch: One idea is to move away from a textual represenation. Instead, the AST is directly manipulated through an API with Git-like features. The syntax is based on nested arrow comprehension expressions. They are compiled into a nested DAG serving as a database schema. Every update to the AST can be used to derive a corresponding data migration. The approach is related to David Spivak’s OLOGs and Algebraic Databases.&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoy visiting this blog and I am looking forward to get feedback. For now, there is no way to drop comments so feel free to send me an email.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with the roadmap:&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -37,17 +45,12 @@
   &lt;li&gt;
     &lt;p&gt;Form arrows to arrow comprehension and back again&lt;/p&gt;
 
-    &lt;p&gt;&lt;em&gt;Survey&lt;/em&gt;: Just as for monads there is also a notion of comprehension for arrows. It allows for a very convenient way to compose computations with arrows . We repeat our discussion of monads and investigate the slogan “An arrow is something that lets us interpret arrow comprehensions”.&lt;/p&gt;
+    &lt;p&gt;&lt;em&gt;Survey&lt;/em&gt;: Just as for monads there is also a notion of comprehension for arrows. It allows for a very convenient way to compose computations with arrows. We repeat our discussion of monads and investigate the slogan “An arrow is something that lets us interpret arrow comprehensions”.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Digression: Generators in Javascript and arrow comprehension&lt;/p&gt;
 
     &lt;p&gt;&lt;em&gt;Survey&lt;/em&gt;: We imagine a better world where Javascript has pure functions - and thus cloneable generators - and investigate how comprehension can be related to generator functions.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A Lavwere theory for arrow expressions&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Survey&lt;/em&gt;: We introduce a lavwere theory capturing the syntactic structure of arrow comprehension expressions.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 

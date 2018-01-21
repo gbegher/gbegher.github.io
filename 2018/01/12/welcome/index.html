@@ -7,21 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Introduction | Schematic</title>
+  <title>Introduction | Schematic Programming</title>
   <meta name="author" content="Gerrit Begher">
   <meta name="description" content="A research blog about category theory and programming">
-  <meta property="og:title" content="Introduction | Schematic">
+  <meta property="og:title" content="Introduction | Schematic Programming">
   <meta property="og:url" content="gbegher.github.io/2018/01/12/welcome/">
-  <meta property="og:site_name" content="Schematic">
+  <meta property="og:site_name" content="Schematic Programming">
   <meta property="og:description" content="A research blog about category theory and programming">
   <meta property="og:image" content="/assets/img/welcome.png">
   <meta property="og:type" content="blog">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content="A research blog about category theory and programming">
-  <meta name="twitter:title" content="Introduction | Schematic">
+  <meta name="twitter:title" content="Introduction | Schematic Programming">
   <meta name="twitter:url" content="gbegher.github.io/2018/01/12/welcome/">
-  <meta name="twitter:site" content="Schematic">
+  <meta name="twitter:site" content="Schematic Programming">
   <meta name="twitter:creator" content="@g_begher">
   <meta name="twitter:domain" content="gbegher.github.io">
   <meta property="twitter:image" content="/assets/img/welcome.png">
@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
-  <link rel="alternate" type="application/rss+xml" title="Schematic" href="gbegher.github.io/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Schematic Programming" href="gbegher.github.io/feed.xml">
   <link rel="canonical" href="gbegher.github.io/2018/01/12/welcome/">
 
   
@@ -72,7 +72,15 @@
 
 <p><br /></p>
 
-<p>I am Gerrit Begher, a mathematician and software engineer living in Berlin. The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.</p>
+<p>I am Gerrit Begher, a mathematician and software engineer living in Berlin.</p>
+
+<p>The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.</p>
+
+<p>Another project of mine is to build a functional reactive programming environment. This blog will also serve as a hub to explain the ideas behind this project. For now - Just a short sketch: One idea is to move away from a textual represenation. Instead, the AST is directly manipulated through an API with Git-like features. The syntax is based on nested arrow comprehension expressions. They are compiled into a nested DAG serving as a database schema. Every update to the AST can be used to derive a corresponding data migration. The approach is related to David Spivak’s OLOGs and Algebraic Databases.</p>
+
+<p>I hope you enjoy visiting this blog and I am looking forward to get feedback. For now, there is no way to drop comments so feel free to send me an email.</p>
+
+<p>Let’s start with the roadmap:</p>
 
 <p><br /></p>
 
@@ -94,17 +102,12 @@
   <li>
     <p>Form arrows to arrow comprehension and back again</p>
 
-    <p><em>Survey</em>: Just as for monads there is also a notion of comprehension for arrows. It allows for a very convenient way to compose computations with arrows . We repeat our discussion of monads and investigate the slogan “An arrow is something that lets us interpret arrow comprehensions”.</p>
+    <p><em>Survey</em>: Just as for monads there is also a notion of comprehension for arrows. It allows for a very convenient way to compose computations with arrows. We repeat our discussion of monads and investigate the slogan “An arrow is something that lets us interpret arrow comprehensions”.</p>
   </li>
   <li>
     <p>Digression: Generators in Javascript and arrow comprehension</p>
 
     <p><em>Survey</em>: We imagine a better world where Javascript has pure functions - and thus cloneable generators - and investigate how comprehension can be related to generator functions.</p>
-  </li>
-  <li>
-    <p>A Lavwere theory for arrow expressions</p>
-
-    <p><em>Survey</em>: We introduce a lavwere theory capturing the syntactic structure of arrow comprehension expressions.</p>
   </li>
 </ul>
 
