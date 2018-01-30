@@ -5,15 +5,131 @@
     <description>A research blog about category theory and programming</description>
     <link>gbegher.github.io/</link>
     <atom:link href="gbegher.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Jan 2018 20:01:01 -0600</pubDate>
-    <lastBuildDate>Sat, 20 Jan 2018 20:01:01 -0600</lastBuildDate>
+    <pubDate>Tue, 30 Jan 2018 08:55:25 -0600</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2018 08:55:25 -0600</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Decomposition and parameterization of sets</title>
+        <description>&lt;p&gt;Hello and welcome everyone! Today we’re going to take a first look at the Grothendieck Construction, a tool that can be applied in a wide range of settings. The general idea is that when dealing with objects of a certain type - for example Sets, Categories, Metric Spaces, Ordered Sets, Topological Spaces, etc. - we can often define two things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Decompositions of objects into parts. A decomposition describes what the parts of an object are and how the object relates to its parts. The example we will talk about today is that of partitions of sets.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Parameterized families of objects. Here, we have an indexing object parameterizing a family of objects of the same type. In the case of sets, we will today look at families $(X_i)_{i\in I}$ of sets.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In such a setting we can usually perform two mutually inverse operations. We start with a conceptual description to be followed by examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Given a parameterized family of objects, we can glue these objects to build a new object. This new object comes equipped with a decomposition where the parts are exactly the objects of our parameterized family. This operation is called the &lt;em&gt;Grothendieck Construction&lt;/em&gt;. We denote it $\mathbb G$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Given an object together with a decomposition, we find that the entirety of the parts can be organized into an object of the same type. This object then naturally forms an index for the parts. Gluing together this family with the Grothendieck Construction yields the ‘same’ object and decomposition we started with. We call passing from a decomposition to its indexing family &lt;em&gt;“taking the fibres of a decomposition”&lt;/em&gt;. We denote it $\mathbb F$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a mnemonic depicting this situation, remember the following picture where $\mathcal F$ denotes parametrized families and $\mathcal D$ denotes decompositions:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/02_fibrations-situation.png&quot; alt=&quot;alt text&quot; title=&quot;Situation mnemonic&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;example-sets&quot;&gt;Example: Sets&lt;/h2&gt;
+
+&lt;p&gt;One of the most simple settings where the Grothendiek Construction can be witnessed are sets.&lt;/p&gt;
+
+&lt;h3 id=&quot;decompositions-and-parameterizations&quot;&gt;Decompositions and parameterizations&lt;/h3&gt;
+
+&lt;p&gt;Before defining what decomposition and parameterizations of sets should be, we will recall the definition of a partition:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;em&gt;partition of a set $X$&lt;/em&gt; is a nonempty subset of nonempty subsets of $X$, namely&lt;/p&gt;
+
+  &lt;script type=&quot;math/tex; mode=display&quot;&gt;P\subsetneq\mathfrak PX,&lt;/script&gt;
+
+  &lt;p&gt;such that $\bigcup P=X$ and furthermore $U\cap V=\emptyset$ whenever $U\neq V$ and $U, V\in P$. Here $\mathfrak PX$ denotes the power set of $X$, the set of all subsets of $X$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a consequence, we find that for every $x\in X$ there is precisely one component $px\in P$ with $x\in px$. This constitutes a map $
+p:X\to P$. Notice that for every $U\in P$ we find $p^{-1}U=\lbrace x \mid x\in U\rbrace = U$. We take this as a guiding principle and make the following definitions.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;em&gt;decomposition&lt;/em&gt; is simply a map $p:X\to I$ where $X$ and $I$ are arbitrary sets. The &lt;em&gt;fiber of a map $p:X\to I$ over an element $i\in I$&lt;/em&gt; is defined to be&lt;/p&gt;
+
+  &lt;script type=&quot;math/tex; mode=display&quot;&gt;X_i := p^{-1}i = \lbrace x\in X \mid px = i\rbrace.&lt;/script&gt;
+
+  &lt;p&gt;This constitutes in a family of sets indexed by $I$. We denote the corresponding map by&lt;/p&gt;
+
+  &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb Fp:I\to \mathrm{Set}.&lt;/script&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Reversing this, we come up with the following definition:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;em&gt;parameterized set&lt;/em&gt; is a map $X_\bullet:I_X\to \mathrm{Set}$. Here $I$ is an arbitrary set and $\mathrm{Set}$ denotes the ‘universe/class/set’ of all sets. For every parameterized set $X_\bullet$ we can build the &lt;em&gt;disjoint sum&lt;/em&gt; given by&lt;/p&gt;
+
+  &lt;script type=&quot;math/tex; mode=display&quot;&gt;\coprod X_\bullet = \lbrace (x, i) \mid x\in X_i, i\in I \rbrace.&lt;/script&gt;
+
+  &lt;p&gt;The disjoint sum comes equipped with a map $\coprod X_\bullet\to I$ given by $(x, i)\mapsto i$. We denote this map by $\mathbb GX_\bullet$. We call $\mathbb G$ the &lt;em&gt;Grothendiek Construction for sets&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Denoting decompositions by $\mathcal D$ and parameterized families by $\mathcal F$ we can summarize the situation with the following picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/02_groth-sets_img.png&quot; alt=&quot;alt text&quot; title=&quot;The Grothendieck Construction&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;there-and-back-again&quot;&gt;There and back again&lt;/h3&gt;
+
+&lt;p&gt;It remains to check in what sense these two operations are inverse to each other. The reader familiar with category theory can easily verify that $\mathbb F$ and $\mathbb G$ are actually functors, forming mutually inverse equivalences of categories. For everybody else, we will provide a simplified version of this statement.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Given a decomposition $p:X \to I$ we find the maps&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{array}{ccccccc}
+  X &amp; \to &amp; \coprod X_\bullet &amp; \textrm{ given by } &amp; x &amp; \mapsto &amp; (x, px) \\
+  \coprod X_\bullet &amp; \to &amp; X &amp; \textrm{ given by } &amp; (x, i) &amp; \mapsto &amp; x
+\end{array} %]]&gt;&lt;/script&gt;
+
+    &lt;p&gt;to be mutually inverse bijections. They are furthermore compatible with the respective maps into $I$ and thus we have an &lt;em&gt;isomorphism of decompositions&lt;/em&gt;&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb G\mathbb Fp \simeq p.&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Given a family $X_\bullet: I/to \mathrm{Set}$ we remember that for a given $i\in I$ we have $(\mathbb GX_\bullet)_i=\lbrace (x, i)\mid x\in X_i\rbrace$ and accordingly find the maps&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{array}{ccccccc}
+  X_i &amp; \to &amp; (\mathbb GX_\bullet)_i &amp; \textrm{ given by } &amp; x &amp; \mapsto &amp; (x, i) \\
+  (\mathbb GX_\bullet)_i &amp; \to &amp; X_i &amp; \textrm{ given by } &amp; (x, i) &amp; \mapsto &amp; x
+\end{array} %]]&gt;&lt;/script&gt;
+
+    &lt;p&gt;to be mutually inverse bijections. These then constitute what we call an &lt;em&gt;isomorphism of parameterized families&lt;/em&gt;.&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb F\mathbb GX_\bullet \simeq X_\bullet.&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;final-words&quot;&gt;Final words&lt;/h3&gt;
+
+&lt;p&gt;Today was only a brief outlook on the Grothendieck Construction. In the next posts on this topic we will investigate how to generalize this idea to more usefull settings.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 30 Jan 2018 00:00:00 -0600</pubDate>
+        <link>gbegher.github.io/2018/01/30/groth-set/</link>
+        <guid isPermaLink="true">gbegher.github.io/2018/01/30/groth-set/</guid>
+        
+        
+        <category>Grothendiek Construction</category>
+        
+      </item>
     
       <item>
         <title>Introduction</title>
         <description>&lt;h1 id=&quot;hello-and-welcome&quot;&gt;Hello and welcome.&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am Gerrit Begher, a mathematician and software engineer living in Berlin.&lt;/p&gt;
 
@@ -24,8 +140,6 @@
 &lt;p&gt;I hope you enjoy visiting this blog and I am looking forward to get feedback. For now, there is no way to drop comments so feel free to send me an email.&lt;/p&gt;
 
 &lt;p&gt;Let’s start with the roadmap:&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;arrowized-programming&quot;&gt;Arrowized programming&lt;/h2&gt;
 

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\(', '\)'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true,
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Decomposition and parameterization of sets | Schematic Programming</title>
+  <meta name="author" content="Gerrit Begher">
+  <meta name="description" content="A research blog about category theory and programming">
+  <meta property="og:title" content="Decomposition and parameterization of sets | Schematic Programming">
+  <meta property="og:url" content="gbegher.github.io/2018/01/30/groth-set/">
+  <meta property="og:site_name" content="Schematic Programming">
+  <meta property="og:description" content="A research blog about category theory and programming">
+  <meta property="og:image" content="/assets/img/02_groth-sets.png">
+  <meta property="og:type" content="blog">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="A research blog about category theory and programming">
+  <meta name="twitter:title" content="Decomposition and parameterization of sets | Schematic Programming">
+  <meta name="twitter:url" content="gbegher.github.io/2018/01/30/groth-set/">
+  <meta name="twitter:site" content="Schematic Programming">
+  <meta name="twitter:creator" content="@g_begher">
+  <meta name="twitter:domain" content="gbegher.github.io">
+  <meta property="twitter:image" content="/assets/img/02_groth-sets.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <link rel="alternate" type="application/rss+xml" title="Schematic Programming" href="gbegher.github.io/feed.xml">
+  <link rel="canonical" href="gbegher.github.io/2018/01/30/groth-set/">
+
+  
+</head>
+
+
+  <body>
+
+    <main>
+      <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="section-padding--lg mast rellax" data-rellax-speed="-4">
+    <a class="nav nav--white" href="/">
+      <i class="fa fa-lg fa-arrow-left"></i>
+      <span>Back to Posts</span>
+    </a>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/img/02_groth-sets.png');"></figure>
+    <div class="mast__container">
+      <span><time datetime="2018-01-30T00:00:00-06:00" itemprop="datePublished">Jan 30, 2018</time></span>
+      <h1 itemprop="name headline">Decomposition and parameterization of sets</h1>
+      
+        <span>Posted in 
+          
+            <a class="nav--white" href="/category/grothendiek-construction">Grothendiek Construction</a>
+          
+        </span>
+      
+      <span></span>
+    </div>
+  </header>
+
+  <section class="section-padding bg-grey" itemprop="articleBody">
+    <div class="post">
+      <p>Hello and welcome everyone! Today we’re going to take a first look at the Grothendieck Construction, a tool that can be applied in a wide range of settings. The general idea is that when dealing with objects of a certain type - for example Sets, Categories, Metric Spaces, Ordered Sets, Topological Spaces, etc. - we can often define two things:</p>
+
+<ul>
+  <li>
+    <p>Decompositions of objects into parts. A decomposition describes what the parts of an object are and how the object relates to its parts. The example we will talk about today is that of partitions of sets.</p>
+  </li>
+  <li>
+    <p>Parameterized families of objects. Here, we have an indexing object parameterizing a family of objects of the same type. In the case of sets, we will today look at families $(X_i)_{i\in I}$ of sets.</p>
+  </li>
+</ul>
+
+<p>In such a setting we can usually perform two mutually inverse operations. We start with a conceptual description to be followed by examples:</p>
+
+<ul>
+  <li>
+    <p>Given a parameterized family of objects, we can glue these objects to build a new object. This new object comes equipped with a decomposition where the parts are exactly the objects of our parameterized family. This operation is called the <em>Grothendieck Construction</em>. We denote it $\mathbb G$.</p>
+  </li>
+  <li>
+    <p>Given an object together with a decomposition, we find that the entirety of the parts can be organized into an object of the same type. This object then naturally forms an index for the parts. Gluing together this family with the Grothendieck Construction yields the ‘same’ object and decomposition we started with. We call passing from a decomposition to its indexing family <em>“taking the fibres of a decomposition”</em>. We denote it $\mathbb F$.</p>
+  </li>
+</ul>
+
+<p>As a mnemonic depicting this situation, remember the following picture where $\mathcal F$ denotes parametrized families and $\mathcal D$ denotes decompositions:</p>
+
+<p><img src="/assets/img/02_fibrations-situation.png" alt="alt text" title="Situation mnemonic" /></p>
+
+<h2 id="example-sets">Example: Sets</h2>
+
+<p>One of the most simple settings where the Grothendiek Construction can be witnessed are sets.</p>
+
+<h3 id="decompositions-and-parameterizations">Decompositions and parameterizations</h3>
+
+<p>Before defining what decomposition and parameterizations of sets should be, we will recall the definition of a partition:</p>
+
+<blockquote>
+  <p><strong>Definition:</strong> A <em>partition of a set $X$</em> is a nonempty subset of nonempty subsets of $X$, namely</p>
+
+  <script type="math/tex; mode=display">P\subsetneq\mathfrak PX,</script>
+
+  <p>such that $\bigcup P=X$ and furthermore $U\cap V=\emptyset$ whenever $U\neq V$ and $U, V\in P$. Here $\mathfrak PX$ denotes the power set of $X$, the set of all subsets of $X$.</p>
+</blockquote>
+
+<p>As a consequence, we find that for every $x\in X$ there is precisely one component $px\in P$ with $x\in px$. This constitutes a map $
+p:X\to P$. Notice that for every $U\in P$ we find $p^{-1}U=\lbrace x \mid x\in U\rbrace = U$. We take this as a guiding principle and make the following definitions.</p>
+
+<blockquote>
+  <p><strong>Definition:</strong> A <em>decomposition</em> is simply a map $p:X\to I$ where $X$ and $I$ are arbitrary sets. The <em>fiber of a map $p:X\to I$ over an element $i\in I$</em> is defined to be</p>
+
+  <script type="math/tex; mode=display">X_i := p^{-1}i = \lbrace x\in X \mid px = i\rbrace.</script>
+
+  <p>This constitutes in a family of sets indexed by $I$. We denote the corresponding map by</p>
+
+  <script type="math/tex; mode=display">\mathbb Fp:I\to \mathrm{Set}.</script>
+</blockquote>
+
+<p>Reversing this, we come up with the following definition:</p>
+
+<blockquote>
+  <p><strong>Definition:</strong> A <em>parameterized set</em> is a map $X_\bullet:I_X\to \mathrm{Set}$. Here $I$ is an arbitrary set and $\mathrm{Set}$ denotes the ‘universe/class/set’ of all sets. For every parameterized set $X_\bullet$ we can build the <em>disjoint sum</em> given by</p>
+
+  <script type="math/tex; mode=display">\coprod X_\bullet = \lbrace (x, i) \mid x\in X_i, i\in I \rbrace.</script>
+
+  <p>The disjoint sum comes equipped with a map $\coprod X_\bullet\to I$ given by $(x, i)\mapsto i$. We denote this map by $\mathbb GX_\bullet$. We call $\mathbb G$ the <em>Grothendiek Construction for sets</em>.</p>
+</blockquote>
+
+<p>Denoting decompositions by $\mathcal D$ and parameterized families by $\mathcal F$ we can summarize the situation with the following picture.</p>
+
+<p><img src="/assets/img/02_groth-sets_img.png" alt="alt text" title="The Grothendieck Construction" /></p>
+
+<h3 id="there-and-back-again">There and back again</h3>
+
+<p>It remains to check in what sense these two operations are inverse to each other. The reader familiar with category theory can easily verify that $\mathbb F$ and $\mathbb G$ are actually functors, forming mutually inverse equivalences of categories. For everybody else, we will provide a simplified version of this statement.</p>
+
+<ul>
+  <li>
+    <p>Given a decomposition $p:X \to I$ we find the maps</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{array}{ccccccc}
+  X & \to & \coprod X_\bullet & \textrm{ given by } & x & \mapsto & (x, px) \\
+  \coprod X_\bullet & \to & X & \textrm{ given by } & (x, i) & \mapsto & x
+\end{array} %]]></script>
+
+    <p>to be mutually inverse bijections. They are furthermore compatible with the respective maps into $I$ and thus we have an <em>isomorphism of decompositions</em></p>
+
+    <script type="math/tex; mode=display">\mathbb G\mathbb Fp \simeq p.</script>
+  </li>
+  <li>
+    <p>Given a family $X_\bullet: I/to \mathrm{Set}$ we remember that for a given $i\in I$ we have $(\mathbb GX_\bullet)_i=\lbrace (x, i)\mid x\in X_i\rbrace$ and accordingly find the maps</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{array}{ccccccc}
+  X_i & \to & (\mathbb GX_\bullet)_i & \textrm{ given by } & x & \mapsto & (x, i) \\
+  (\mathbb GX_\bullet)_i & \to & X_i & \textrm{ given by } & (x, i) & \mapsto & x
+\end{array} %]]></script>
+
+    <p>to be mutually inverse bijections. These then constitute what we call an <em>isomorphism of parameterized families</em>.</p>
+
+    <script type="math/tex; mode=display">\mathbb F\mathbb GX_\bullet \simeq X_\bullet.</script>
+  </li>
+</ul>
+
+<h3 id="final-words">Final words</h3>
+
+<p>Today was only a brief outlook on the Grothendieck Construction. In the next posts on this topic we will investigate how to generalize this idea to more usefull settings.</p>
+
+
+    </div>
+  </section>
+
+  <section class="profile">
+    <div class="profile__card">
+      <div class="profile__img">
+        <figure class="absolute-bg" style="background-image: url('/assets/img/gerrit.png');"></figure>
+      </div>
+      <div class="profile__container">
+        <p>Gerrit Begher is a mathematician and software engineer living in Berlin. His research deals with the category theoretic semantics of programming languages. He enjoys board gaming, electronic music, category theory and long walks on the beach.</p>
+        
+          <ul class="profile__social">
+            
+              <li><a class="fa fa-lg fa-envelope-o" href="mailto:gbegher*protonmail.com"></a></li>
+            
+            
+              <li><a class="fa fa-lg fa-github" href="https://github.com/gbegher" target="_blank"></a></li>
+            
+              <li><a class="fa fa-lg fa-stack-overflow" href="https://mathoverflow.net/users/1261/gerrit-begher?tab=profile" target="_blank"></a></li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </section>
+
+</article>
+
+
+  <section class="next">
+    <a class="next__link" href="/2018/01/12/welcome/" style="background-image: url('/assets/img/welcome.png');">
+      <div class="next__container">
+        <span>Read Next</span>
+        <h2>Introduction</h2>
+      </div>
+    </a>
+  </section>
+
+
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.0.0/rellax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+
+  </body>
+
+</html>

@@ -2,7 +2,21 @@
 <html>
 
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\(', '\)'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true,
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +65,26 @@
     <span>Archive</span>
   </header>
   <div class="section-padding archives__container">
+    
+      <article class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <a class="card__link" href="/2018/01/30/groth-set/" itemprop="url">
+          <div class="card__img">
+            
+              <figure class="absolute-bg wow" style="background-image: url('/assets/img/02_groth-sets_sm.png');"></figure>
+            
+          </div>
+          <div class="card__container">
+            <h2 class="card__header" itemprop="name">Decomposition and parameterization of sets</h2>
+            <p class="card__count" itemprop="datePublished" datetime="2018-01-30T00:00:00-06:00">
+              Jan 30, 2018
+              
+                in Grothendiek Construction
+              
+            </p>
+            <span class="card__more">Read Post</span>
+          </div>
+        </a>
+      </article>
     
       <article class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <a class="card__link" href="/2018/01/12/welcome/" itemprop="url">

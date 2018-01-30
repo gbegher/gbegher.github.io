@@ -2,7 +2,21 @@
 <html>
 
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\(', '\)'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true,
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,8 +84,6 @@
     <div class="post">
       <h1 id="hello-and-welcome">Hello and welcome.</h1>
 
-<p><br /></p>
-
 <p>I am Gerrit Begher, a mathematician and software engineer living in Berlin.</p>
 
 <p>The goal of this blog is to serve as a notepad for my research. It contains surveys, sketches and research notes about the connection between higher category theorety and programming languages. Some knowledge of category theory is required, of course. This post contains a roadmap of the upcoming topics I intend to write about. In the future, I will eventually extend it in order to provide additional explanations and framing for the individual posts.</p>
@@ -81,8 +93,6 @@
 <p>I hope you enjoy visiting this blog and I am looking forward to get feedback. For now, there is no way to drop comments so feel free to send me an email.</p>
 
 <p>Let’s start with the roadmap:</p>
-
-<p><br /></p>
 
 <h2 id="arrowized-programming">Arrowized programming</h2>
 
